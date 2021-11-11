@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Weather app"
+        android:layout_above="@id/login_layout"
+        android:padding="15dp"
+        android:textSize="28sp"
+        android:textStyle="bold"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/login_layout"
+        android:layout_centerInParent="true">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/appName"
+            app:cardElevation="8dp"
+            android:id="@+id/oneViewCardView">
+
+            <!--details 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                >
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    app:startIconTint="@color/colorPrimaryDark"
+                    app:startIconDrawable="@drawable/ic_person_black_24dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:hint="Username"
+                    app:boxStrokeColor="@color/colorPrimaryDark">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/email"
+                        android:inputType="textEmailAddress"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:hint="Password"
+                    app:startIconTint="@color/colorPrimaryDark"
+                    app:startIconDrawable="@drawable/ic_lock_black_24dp"
+                    app:endIconMode="password_toggle"
+                    app:boxStrokeColor="@color/colorPrimaryDark">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:id="@+id/text_input_password_toggle"
+                        android:inputType="textPassword"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/oneViewCardView"
+            android:layout_gravity="center"
+            android:id="@+id/createUser"
+            android:onClick="login_now"
+            android:text="Log in"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:padding="15dp"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
+
+</RelativeLayout>
